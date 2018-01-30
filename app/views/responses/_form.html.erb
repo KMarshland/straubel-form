@@ -4,12 +4,14 @@
       <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
 
       <ul>
-      <% response.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% response.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
+
+  <%= question title: 'Email', name: 'email', outside_answer: true, type: 'text' %>
 
   <% @questions.each do |_name, question| %>
     <%= question question %>

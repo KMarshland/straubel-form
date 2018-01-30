@@ -8,6 +8,7 @@
 #  answers    :json
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  email      :string
 #
 # Indexes
 #
@@ -20,5 +21,6 @@ class Response < ApplicationRecord
   validates :session, presence: true
   validates :view, presence: true
   validates :answers, presence: true
+  validates :email, presence: true
 
 end

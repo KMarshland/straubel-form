@@ -72,7 +72,7 @@ class ResponsesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def response_params
-    params.require(:response).permit(:session, :view, answers: QUESTIONS.keys)
+    params.require(:response).permit(:session, :view, :email, answers: QUESTIONS.keys)
   end
 
   def set_questions

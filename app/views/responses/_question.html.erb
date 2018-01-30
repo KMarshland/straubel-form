@@ -2,6 +2,10 @@
 <div class="question">
   <h2><%= title %></h2>
 
-  <textarea name="response[answers][<%= name %>]"></textarea>
+  <% if type == 'textarea' %>
+    <textarea name="<%= name %>"></textarea>
+  <% else %>
+    <input type="<%= type %>" name="<%= name %>">
+  <% end %>
 
 </div>

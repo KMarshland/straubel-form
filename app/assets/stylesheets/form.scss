@@ -11,4 +11,10 @@
     resize: vertical;
     width: 100%;
   }
+
+  input[type="text"] {
+    border: 1px solid;
+    width: 400px;
+    max-width: 100%;
+  }
 }
