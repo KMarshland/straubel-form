@@ -31,7 +31,7 @@ class ResponsesController < ApplicationController
       if @response.save
         session[:session_uuid] = nil
 
-        format.html { redirect_to @response, notice: 'Response was successfully created.' }
+        format.html { render :thanks }
         format.json { render :show, status: :created, location: @response }
       else
         format.html { render :new }
