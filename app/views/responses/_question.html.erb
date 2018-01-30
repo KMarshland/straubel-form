@@ -1,5 +1,5 @@
 
-<div class="question">
+<div class="question" id="<%= id %>">
   <h2><%= title %></h2>
 
   <% if type == 'textarea' %>
@@ -9,3 +9,35 @@
   <% end %>
 
 </div>
+
+<script>
+    (function () {
+        var parent = document.getElementById('<%= id %>');
+        var input = parent.getElementsByTagName('input')[0] || parent.getElementsByTagName('textarea')[0];
+
+        var name = '<%= name %>';
+
+        input.addEventListener('focus', function () {
+            createEvent({
+                kind: 'questionFocus',
+                question: name
+            })
+        }, false);
+
+        input.addEventListener('blur', function () {
+            if (input.value) {
+                createEvent({
+                    kind: 'questionFill',
+                    question: name
+                });
+            }
+
+
+            createEvent({
+                kind: 'questionBlur',
+                question: name
+            });
+        }, false);
+
+    })();
+</script>
