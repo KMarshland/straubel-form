@@ -25,6 +25,7 @@ class ResponsesController < ApplicationController
   # POST /responses
   # POST /responses.json
   def create
+    puts response_params
     @response = Response.new(response_params)
 
     respond_to do |format|
