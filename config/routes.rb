@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'events' => 'events#create'
+
   resources :responses, except: [:edit, :update]
 
   root 'responses#new'

@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
-  before_action :set_form_data, only: [:new, :edit, :update, :create]
+  before_action :set_questions, only: [:new, :edit, :update, :create]
 
   # GET /responses
   # GET /responses.json
@@ -29,6 +29,8 @@ class ResponsesController < ApplicationController
 
     respond_to do |format|
       if @response.save
+        session[:session_uuid] = nil
+
         format.html { redirect_to @response, notice: 'Response was successfully created.' }
         format.json { render :show, status: :created, location: @response }
       else
@@ -73,15 +75,7 @@ class ResponsesController < ApplicationController
     params.require(:response).permit(:session, :view, answers: QUESTIONS.keys)
   end
 
-  def set_form_data
-    if session[:session_uuid].present?
-      @session_id = session[:session_uuid]
-    else
-      session[:session_uuid] = @session_id = SecureRandom.uuid
-    end
-
-    @view_id = SecureRandom.uuid
-
+  def set_questions
     @questions = QUESTIONS
   end
 end
