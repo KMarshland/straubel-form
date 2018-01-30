@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130052445) do
+ActiveRecord::Schema.define(version: 20180130052935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20180130052445) do
     t.datetime "updated_at", null: false
     t.index ["session"], name: "index_events_on_session"
     t.index ["view"], name: "index_events_on_view"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.uuid "session", default: -> { "uuid_generate_v4()" }
+    t.uuid "view", default: -> { "uuid_generate_v4()" }
+    t.json "answers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session"], name: "index_responses_on_session"
+    t.index ["view"], name: "index_responses_on_view"
   end
 
 end

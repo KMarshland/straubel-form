@@ -1,0 +1,24 @@
+<%= form_with(model: response, local: true) do |form| %>
+  <% if response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+      <% response.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @questions.each do |_name, question| %>
+    <%= question question %>
+  <% end %>
+
+  <input type="hidden" name="response[session]" value="<%= @session_id %>">
+  <input type="hidden" name="response[view]" value="<%= @view_id %>">
+
+  <div class="actions">
+    <%= form.submit 'Submit', class: 'sqs-donate-button sqs-suppress-edit-mode sqs-system-button sqs-editable-button' %>
+  </div>
+<% end %>
