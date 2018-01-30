@@ -4,9 +4,9 @@
 
 <%= form_tag do %>
 
-  <%= question title: 'Question 1', name: 'q1' %>
-  <%= question title: 'Question 2', name: 'q2' %>
-  <%= question title: 'Question 3', name: 'q3' %>
+  <% @questions.each do |_name, question| %>
+    <%= question question %>
+  <% end %>
 
   <%= submit_tag 'Submit', class: 'sqs-donate-button sqs-suppress-edit-mode sqs-system-button sqs-editable-button' %>
 

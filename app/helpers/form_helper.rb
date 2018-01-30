@@ -1,11 +1,8 @@
 module FormHelper
 
-  def question(title:,name:)
+  def question(opts)
 
-    render partial: 'question', locals: {
-        title: title,
-        name: name
-    }
+    render partial: 'question', locals: opts
 
   end
 
