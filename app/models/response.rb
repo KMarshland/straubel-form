@@ -23,4 +23,15 @@ class Response < ApplicationRecord
   validates :answers, presence: true
   validates :email, presence: true
 
+  after_commit :create_event, on: :create
+
+  def create_event
+    Event.create(
+             session: self.session,
+             view: self.view,
+             time: DateTime.now,
+             kind: 'success'
+    )
+  end
+
 end
