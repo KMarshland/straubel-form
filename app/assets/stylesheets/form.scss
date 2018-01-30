@@ -1,3 +1,14 @@
 // Place all the styles related to the form controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.question {
+
+  margin: 15px 0 25px 0;
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+    width: 100%;
+  }
+}

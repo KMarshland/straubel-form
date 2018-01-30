@@ -1,2 +1,13 @@
-<h1>Form#main</h1>
-<p>Find me in app/views/form/main.html.erb</p>
+
+<h1>Straubel Leadership Awards pre-application</h1>
+
+
+<%= form_tag do %>
+
+  <%= question title: 'Question 1', name: 'q1' %>
+  <%= question title: 'Question 2', name: 'q2' %>
+  <%= question title: 'Question 3', name: 'q3' %>
+
+  <%= submit_tag 'Submit', class: 'sqs-donate-button sqs-suppress-edit-mode sqs-system-button sqs-editable-button' %>
+
+<% end %>
