@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   post 'events' => 'events#create'
 
   resources :responses, except: [:edit, :update]
