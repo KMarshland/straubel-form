@@ -1,4 +1,44 @@
 
-q1: What is your superpower?
-q2: What is one goal you have set for yourself in the next 2 years?
-q3: What would benefit you most at this stage of your professional journey?
+# https://docs.google.com/document/d/1XcS47kKfzin4_zXrSUjot6AMtoVb5DjL2wJl3GDowA0/edit?ts=5a71fdc7
+
+q1:
+  title: Rank your superpowers
+  type: rank
+  options:
+    - Emotional intelligence (self-awareness, self-regulation, empathy, social skill)
+    - Grit (resourceful, scrappy, plucky)
+    - Perseverance (overcome barriers, distance traveled)
+    - Achievement motivation/Drive (ambition, initiative, energy)
+    - Leader that create leaders that create leaders
+    - Resource magnetism
+    - Passion & purpose
+  include_other: true
+q2:
+  title: What is one goal you have set for yourself in the next 2 years?
+  type: checkbox
+  options:
+    - Better public speaker
+    - Build personal brand
+    - Excel at job or get a top tier job
+    - Excel in college of get into top tier college
+    - Fundraising
+    - Learn to network
+    - Learn to lead others
+    - Focus on physical fitness and wellbeing
+  include_other: true
+
+q3:
+  title: The Straubel Foundation strives to provide personalized programs for each of their fellows. What would benefit you most at this stage of your professional journey?
+  type: checkbox
+  options:
+    - Mentoring for your career
+    - Mentoring for your college/educational path
+    - Mentoring for your business
+    - Personal branding
+    - Publicity
+    - Scholarship
+    - Project funding
+    - Startup funding
+  include_other: true
+
+q4: Beyond what was outlined above, what would you look for in a personalized fellowship experience?
