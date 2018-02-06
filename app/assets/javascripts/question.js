@@ -61,6 +61,21 @@ function initializeQuestion(opts) {
         if (otherEl) {
             otherEl.getElementsByTagName('input')[0].addEventListener('change', updateValues);
         }
+    } else if (opts.type === 'checkbox') {
+        var otherEl = parent.getElementsByClassName('other')[0];
+        var checkbox = otherEl.getElementsByTagName('input')[0];
+        var otherInput = otherEl.getElementsByTagName('input')[1];
+        var updateCheckbox = function () {
+            if (otherInput.value) {
+                checkbox.value = otherInput.value;
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+        };
+
+        otherInput.addEventListener('keyup', updateCheckbox);
+        otherInput.addEventListener('change', updateCheckbox);
     }
 }
 

@@ -16,6 +16,14 @@
         <li class="other">Other: <input type="text"></li>
       <% end %>
     </ul>
+  <% elsif opts[:type] == 'checkbox' %>
+    <% opts[:options].each do |option| %>
+      <label><input type="checkbox" name="<%= opts[:fixed_name] %>[]" value="<%= option %>"> <%= option %></label> <br/>
+    <% end %>
+
+    <% if opts[:include_other] %>
+      <label class="other"><input type="checkbox" name="<%= opts[:fixed_name] %>[]"> Other: <input type="text"></label> <br/>
+    <% end %>
   <% else %>
     <input type="<%= opts[:type] %>" name="<%= opts[:fixed_name] %>">
   <% end %>

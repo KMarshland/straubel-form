@@ -75,7 +75,11 @@ class ResponsesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def response_params
-    params.require(:response).permit(:session, :view, :email, answers: QUESTIONS.keys)
+    params.require(:response).permit(:session, :view, :email, answers: QUESTIONS.keys).tap do |parameters|
+      QUESTIONS.each do |key, _opts|
+        parameters[:answers][key] = params[:response][:answers][key]
+      end
+    end
   end
 
   def set_questions
