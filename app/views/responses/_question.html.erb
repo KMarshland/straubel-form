@@ -4,6 +4,16 @@
 
   <% if opts[:type] == 'textarea' %>
     <textarea name="<%= opts[:fixed_name] %>"></textarea>
+  <% elsif opts[:type] == 'rank' %>
+    <ul class="rank">
+      <% opts[:options].each do |option| %>
+        <li><%= option %></li>
+      <% end %>
+
+      <% if opts[:include_other] %>
+        <li>Other: <input class="other" type="text"></li>
+      <% end %>
+    </ul>
   <% else %>
     <input type="<%= opts[:type] %>" name="<%= opts[:fixed_name] %>">
   <% end %>
@@ -11,5 +21,5 @@
 </div>
 
 <script>
-  initializeQuestion(<%= sanitize opts.to_json %>);
+    initializeQuestion(<%= sanitize opts.to_json %>);
 </script>
