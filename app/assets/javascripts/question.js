@@ -30,7 +30,37 @@ function initializeQuestion(opts) {
     // }, false);
 
     if (opts.type === 'rank') {
-        Sortable.create(parent.getElementsByTagName('ul')[0]);
+        var listEl = parent.getElementsByTagName('ul')[0];
+        window.listEl = listEl;
+
+        var updateValues = function () {
+            var result = [];
+            for (var i = 0; i < listEl.children.length; i++) {
+                var li = listEl.children[i];
+
+                if (li.className.split(' ')[0] === 'other') {
+                    var otherValue = li.getElementsByTagName('input')[0].value;
+                    if (otherValue) {
+                        result.push(otherValue);
+                    }
+                } else {
+                    result.push(li.innerText);
+                }
+            }
+            console.log(result);
+            input.value = JSON.stringify(result);
+        };
+
+        updateValues();
+
+        Sortable.create(listEl, {
+            onUpdate: updateValues
+        });
+
+        var otherEl = listEl.getElementsByClassName('other')[0];
+        if (otherEl) {
+            otherEl.getElementsByTagName('input')[0].addEventListener('change', updateValues);
+        }
     }
 }
 

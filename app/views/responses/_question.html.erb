@@ -5,13 +5,15 @@
   <% if opts[:type] == 'textarea' %>
     <textarea name="<%= opts[:fixed_name] %>"></textarea>
   <% elsif opts[:type] == 'rank' %>
+    <input type="hidden" name="<%= opts[:fixed_name] %>" class="result">
+
     <ul class="rank">
       <% opts[:options].each do |option| %>
         <li><%= option %></li>
       <% end %>
 
       <% if opts[:include_other] %>
-        <li>Other: <input class="other" type="text"></li>
+        <li class="other">Other: <input type="text"></li>
       <% end %>
     </ul>
   <% else %>
