@@ -12,5 +12,6 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require Sortable
 //= require common
 //= require_tree .
