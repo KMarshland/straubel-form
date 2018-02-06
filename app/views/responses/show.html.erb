@@ -12,6 +12,26 @@
 
 <p>
   <strong>Answers:</strong>
-  <%= @response.answers %>
+
+<table>
+  <% @response.answers.each do |key, value| %>
+  <tr>
+    <th><%= key %></th>
+    <td>
+      <% if value.is_a? Array %>
+      <ul>
+        <% value.each do |item| %>
+        <li style="text-align: left">
+          <%= item %>
+        </li>
+        <% end %>
+      </ul>
+      <% else %>
+      <%= value %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
 </p>
 

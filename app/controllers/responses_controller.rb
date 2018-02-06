@@ -76,8 +76,12 @@ class ResponsesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def response_params
     params.require(:response).permit(:session, :view, :email, answers: QUESTIONS.keys).tap do |parameters|
-      QUESTIONS.each do |key, _opts|
+      QUESTIONS.each do |key, opts|
         parameters[:answers][key] = params[:response][:answers][key]
+
+        if opts[:type] == 'rank'
+          parameters[:answers][key] = JSON(parameters[:answers][key])
+        end
       end
     end
   end
