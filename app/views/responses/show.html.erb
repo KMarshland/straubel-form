@@ -15,22 +15,30 @@
 
 <table>
   <% @response.answers.each do |key, value| %>
-  <tr>
-    <th><%= key %></th>
-    <td>
-      <% if value.is_a? Array %>
-      <ul>
-        <% value.each do |item| %>
-        <li style="text-align: left">
-          <%= item %>
-        </li>
+    <tr>
+      <th><%= key %></th>
+      <td>
+        <% if value.is_a? Array %>
+          <ul>
+            <% value.each do |item| %>
+              <li style="text-align: left">
+                <%= item %>
+              </li>
+            <% end %>
+          </ul>
+        <% elsif value.is_a? Hash %>
+          <ul>
+            <% value.each do |key, value| %>
+              <li style="text-align: left">
+                <b><%= key %></b>: <%= value %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <%= value %>
         <% end %>
-      </ul>
-      <% else %>
-      <%= value %>
-      <% end %>
-    </td>
-  </tr>
+      </td>
+    </tr>
   <% end %>
 </table>
 </p>

@@ -16,6 +16,32 @@
         <li class="other">Other: <input type="text"></li>
       <% end %>
     </ul>
+  <% elsif opts[:type] == 'scale' %>
+
+    <ul class="scale">
+      <% opts[:options].each do |option| %>
+        <li>
+          <label>
+            <%= option %>
+
+            <select name="<%= opts[:fixed_name] %>[<%= option %>]">
+              <option value="1">1 - Not interested</option>
+              <option value="2">2</option>
+              <option value="3">3 - Later, but not an immediate priority</option>
+              <option value="4">4</option>
+              <option value="5">5 - High priority</option>
+              <option value="6">I'm already comfortable with this</option>
+            </select>
+          </label>
+        </li>
+      <% end %>
+
+      <% if opts[:include_other] %>
+        <li class="other">
+          <%= opts[:other_label] || 'Other:' %> <input type="text" name="<%= opts[:fixed_name] %>[other]">
+        </li>
+      <% end %>
+    </ul>
   <% elsif opts[:type] == 'checkbox' %>
     <% opts[:options].each do |option| %>
       <label><input type="checkbox" name="<%= opts[:fixed_name] %>[]" value="<%= option %>"> <%= option %></label> <br/>
@@ -31,7 +57,7 @@
 </div>
 
 <script>
-  document.addEventListener('turbolinks:load', function () {
-      initializeQuestion(<%= sanitize opts.to_json %>);
-  });
+    document.addEventListener('turbolinks:load', function () {
+        initializeQuestion(<%= sanitize opts.to_json %>);
+    });
 </script>

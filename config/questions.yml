@@ -13,9 +13,10 @@ q1:
     - Resource magnetism
     - Passion & purpose
   include_other: true
+
 q2:
-  title: What is one goal you have set for yourself in the next 2 years?
-  type: checkbox
+  title: We believe in growth-mindset. In the next two years, what is your level of priority in improving
+  type: scale
   options:
     - Better public speaker
     - Build personal brand
@@ -26,6 +27,7 @@ q2:
     - Learn to lead others
     - Focus on physical fitness and wellbeing
   include_other: true
+  other_label: Any other priorities?
 
 q3:
   title: The Straubel Foundation strives to provide personalized programs for each of their fellows. What would benefit you most at this stage of your professional journey?
