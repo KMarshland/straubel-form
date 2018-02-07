@@ -9,10 +9,10 @@ q1:
     - Emotional intelligence (self-awareness, self-regulation, empathy, social skill)
     - Grit (resourceful, scrappy, plucky)
     - Perseverance (overcome barriers, distance traveled)
-    - Achievement motivation/Drive (ambition, initiative, energy)
+    - Achievement and motivation (drive, initiative, energy)
     - Leader that create leaders that create leaders
-    - Resource magnetism
-    - Passion & purpose
+    - Resource magnetism (ability to attract people's support or resources)
+    - Passion and purpose
   include_other: true
 
 q2:
@@ -22,11 +22,10 @@ q2:
     - Better public speaker
     - Build personal brand
     - Excel at job or get a top tier job
-    - Excel in college of get into top tier college
+    - Excel in college or get into top tier college
     - Fundraising
     - Learn to network
     - Learn to lead others
-    - Focus on physical fitness and wellbeing
   include_other: true
   other_label: Any other priorities?
 
