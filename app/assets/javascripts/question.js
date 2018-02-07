@@ -11,30 +11,22 @@ function initializeQuestion(opts) {
         document.getElementById('submit-button').disabled = true;
     }
 
-    input.addEventListener('focus', function () {
+    parent.addEventListener('mousedown', function () {
         createEvent({
-            kind: 'questionFocus',
+            kind: 'questionClick',
             question: name
         })
     }, false);
 
-    input.addEventListener('blur', function () {
-        if (input.value) {
-            createEvent({
-                kind: 'questionFill',
-                question: name
-            });
-            document.getElementById('submit-button').disabled = false;
-        } else {
-            document.getElementById('submit-button').disabled = true;
-        }
-
-
-        createEvent({
-            kind: 'questionBlur',
-            question: name
-        });
-    }, false);
+    if (opts.required) {
+        input.addEventListener('blur', function () {
+            if (input.value) {
+                document.getElementById('submit-button').disabled = false;
+            } else {
+                document.getElementById('submit-button').disabled = true;
+            }
+        }, false);
+    }
 
     if (opts.type === 'rank') {
         var listEl = parent.getElementsByTagName('ul')[0];
@@ -54,7 +46,7 @@ function initializeQuestion(opts) {
                     result.push(li.innerText);
                 }
             }
-            console.log(result);
+
             input.value = JSON.stringify(result);
         };
 
