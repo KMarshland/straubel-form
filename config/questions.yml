@@ -3,6 +3,7 @@
 
 q1:
   title: Rank your superpowers
+  description: Rank by dragging and dropping. Final product should list strongest to least strong superpower.
   type: rank
   options:
     - Emotional intelligence (self-awareness, self-regulation, empathy, social skill)

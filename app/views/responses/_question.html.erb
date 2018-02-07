@@ -1,6 +1,9 @@
 
 <div class="question" id="<%= opts[:id] %>">
   <h2><%= opts[:title] %></h2>
+  <% if opts[:description] %>
+    <%= opts[:description] %>
+  <% end %>
 
   <% if opts[:type] == 'textarea' %>
     <textarea name="<%= opts[:fixed_name] %>"></textarea>
@@ -26,11 +29,10 @@
 
             <select name="<%= opts[:fixed_name] %>[<%= option %>]">
               <option value="1">1 - Not interested</option>
-              <option value="2">2</option>
-              <option value="3">3 - Later, but not an immediate priority</option>
-              <option value="4">4</option>
-              <option value="5">5 - High priority</option>
-              <option value="6">I'm already comfortable with this</option>
+              <option value="2">2 - Low interest</option>
+              <option value="3">3 - Medium interest</option>
+              <option value="4">4 - Strong interest</option>
+              <option value="5">5 - Top priority</option>
             </select>
           </label>
         </li>
