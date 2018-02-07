@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= question title: 'Email', name: 'email', outside_answer: true, type: 'text' %>
+  <%= question title: 'Email', name: 'email', outside_answer: true, type: 'text', required: true %>
 
   <% @questions.each do |_name, question| %>
     <%= question question %>

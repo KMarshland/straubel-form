@@ -7,27 +7,34 @@ function initializeQuestion(opts) {
     var parent = document.getElementById(id);
     var input = parent.getElementsByTagName('input')[0] || parent.getElementsByTagName('textarea')[0];
 
-    // input.addEventListener('focus', function () {
-    //     createEvent({
-    //         kind: 'questionFocus',
-    //         question: name
-    //     })
-    // }, false);
-    //
-    // input.addEventListener('blur', function () {
-    //     if (input.value) {
-    //         createEvent({
-    //             kind: 'questionFill',
-    //             question: name
-    //         });
-    //     }
-    //
-    //
-    //     createEvent({
-    //         kind: 'questionBlur',
-    //         question: name
-    //     });
-    // }, false);
+    if (opts.required) {
+        document.getElementById('submit-button').disabled = true;
+    }
+
+    input.addEventListener('focus', function () {
+        createEvent({
+            kind: 'questionFocus',
+            question: name
+        })
+    }, false);
+
+    input.addEventListener('blur', function () {
+        if (input.value) {
+            createEvent({
+                kind: 'questionFill',
+                question: name
+            });
+            document.getElementById('submit-button').disabled = false;
+        } else {
+            document.getElementById('submit-button').disabled = true;
+        }
+
+
+        createEvent({
+            kind: 'questionBlur',
+            question: name
+        });
+    }, false);
 
     if (opts.type === 'rank') {
         var listEl = parent.getElementsByTagName('ul')[0];

@@ -39,3 +39,8 @@
     }
   }
 }
+
+input[disabled], input[disabled]:hover {
+  opacity: 0.8;
+  cursor: not-allowed;
+}

@@ -31,5 +31,7 @@
 </div>
 
 <script>
-    initializeQuestion(<%= sanitize opts.to_json %>);
+  document.addEventListener('turbolinks:load', function () {
+      initializeQuestion(<%= sanitize opts.to_json %>);
+  });
 </script>
