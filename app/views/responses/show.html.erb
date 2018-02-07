@@ -11,6 +11,21 @@
 </p>
 
 <p>
+  <strong>Date:</strong>
+  <%= @response.created_at.to_formatted_s(:long) %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @response.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @response.email %>
+</p>
+
+<p>
   <strong>Answers:</strong>
 
 <table>

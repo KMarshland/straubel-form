@@ -7,6 +7,9 @@
     <tr>
       <th>Session</th>
       <th>View</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Date</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -16,6 +19,9 @@
       <tr>
         <td><%= response.session %></td>
         <td><%= response.view %></td>
+        <td><%= response.name %></td>
+        <td><%= response.email %></td>
+        <td><%= response.created_at.to_formatted_s(:short) %></td>
         <td><%= link_to 'Show', response %></td>
         <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
