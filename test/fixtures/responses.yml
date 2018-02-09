@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #  email      :string
 #  name       :string
+#  campaign   :string
 #
 # Indexes
 #

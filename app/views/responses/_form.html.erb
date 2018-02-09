@@ -22,16 +22,20 @@
   <input type="hidden" name="response[session]" value="<%= @session_id %>">
   <input type="hidden" name="response[view]" value="<%= @view_id %>">
 
+  <% if @campaign.present? %>
+    <input type="hidden" name="response[campaign]" value="<%= @campaign %>">
+  <% end %>
+
   <div class="actions">
     <%= form.submit 'Submit', class: 'sqs-donate-button sqs-suppress-edit-mode sqs-system-button sqs-editable-button', id: 'submit-button' %>
   </div>
 <% end %>
 
 <script>
-  document.getElementById('submit-button').addEventListener('click', function(){
-      createEvent({
-          kind: 'submit',
-          question: name
-      });
-  })
+    document.getElementById('submit-button').addEventListener('click', function(){
+        createEvent({
+            kind: 'submit',
+            question: name
+        });
+    })
 </script>

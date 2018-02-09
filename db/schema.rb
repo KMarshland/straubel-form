@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207045549) do
+ActiveRecord::Schema.define(version: 20180209172412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180207045549) do
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "name"
+    t.string "campaign"
     t.index ["session"], name: "index_responses_on_session"
     t.index ["view"], name: "index_responses_on_view"
   end

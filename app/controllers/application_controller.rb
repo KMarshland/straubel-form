@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
       session[:session_uuid] = @session_id = SecureRandom.uuid
     end
 
+    if params[:campaign].present?
+      session[:campaign] = @campaign = params[:campaign]
+    elsif session[:campaign].present?
+      @campaign = session[:campaign]
+    end
+
     @view_id = SecureRandom.uuid
   end
 
