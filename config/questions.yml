@@ -2,18 +2,17 @@
 # https://docs.google.com/document/d/1XcS47kKfzin4_zXrSUjot6AMtoVb5DjL2wJl3GDowA0/edit?ts=5a71fdc7
 
 q1:
-  title: Rank your superpowers
-  description: Rank by dragging and dropping. Final product should list strongest to least strong superpower.
-  type: rank
-  options:
-    - Emotional intelligence (self-awareness, self-regulation, empathy, social skill)
-    - Grit (resourceful, scrappy, plucky)
-    - Perseverance (overcome barriers, distance traveled)
-    - Achievement and motivation (drive, initiative, energy)
-    - Leader that create leaders that create leaders
-    - Resource magnetism (ability to attract people's support or resources)
-    - Passion and purpose
-  include_other: true
+  title: What is your superpower?
+  description: Tell us about your core strengths in one or two sentences.
+#  options:
+#    - Emotional intelligence (self-awareness, self-regulation, empathy, social skill)
+#    - Grit (resourceful, scrappy, plucky)
+#    - Perseverance (overcome barriers, distance traveled)
+#    - Achievement and motivation (drive, initiative, energy)
+#    - Leader that create leaders that create leaders
+#    - Resource magnetism (ability to attract people's support or resources)
+#    - Passion and purpose
+#  include_other: true
 
 q2:
   title: We believe in growth-mindset. In the next two years, what is your level of priority in improving
