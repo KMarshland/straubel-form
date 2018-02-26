@@ -3,7 +3,7 @@
 
 q1:
   title: What is your superpower?
-  description: Tell us about your core strengths in one or two sentences.
+  description: Tell us about your core strengths in two or three sentences. (300 characters max)
 #  options:
 #    - Emotional intelligence (self-awareness, self-regulation, empathy, social skill)
 #    - Grit (resourceful, scrappy, plucky)
@@ -15,31 +15,17 @@ q1:
 #  include_other: true
 
 q2:
-  title: We believe in growth-mindset. In the next two years, what is your level of priority in improving
-  type: scale
-  options:
-    - Better public speaker
-    - Build personal brand
-    - Excel at job or get a top tier job
-    - Excel in college or get into top tier college
-    - Fundraising
-    - Learn to network
-    - Learn to lead others
-  include_other: true
-  other_label: Any other priorities?
-
-q3:
   title: The Straubel Foundation strives to provide personalized programs for each of their fellows. What would benefit you most at this stage of your professional journey?
   type: checkbox
   options:
-    - Mentoring for your career
-    - Mentoring for your college/educational path
-    - Mentoring for your business
-    - Personal branding
-    - Publicity
-    - Scholarship
-    - Project funding
-    - Startup funding
+    - Learn how to be a better public speaker
+    - Build personal brand
+    - Excel at current job or get a top tier job
+    - Excel in college of get into top tier college
+    - Learn how to fundraise
+    - Learn to network
+    - Learn to lead others
   include_other: true
+  other_label: Other (200 characters max)
 
-q4: Beyond what was outlined above, what would you look for in a personalized fellowship experience?
+q3: Tell us about a time when you wanted something to happen and you had to mobilize others to get it done. (400 characters max)
