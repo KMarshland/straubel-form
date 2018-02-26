@@ -16,7 +16,9 @@
   <%= question title: 'Email', name: 'email', outside_answer: true, type: 'text', required: true %>
 
   <% @questions.each do |_name, question| %>
-    <%= question question %>
+    <% if question[:campaigns].blank? || question[:campaigns].include?(@campaign) %>
+      <%= question question %>
+    <% end %>
   <% end %>
 
   <input type="hidden" name="response[session]" value="<%= @session_id %>">
