@@ -1,3 +1,13 @@
+<% if @campaign.to_s == 'sustainableimpact' %>
+  <p>
+    At the Straubel Foundation, we aim to drive sustainability through science, engineering, and social innovation. If you are an emerging leader dedicated to creating a sustainable impact in your community, please fill out our brief (10-minute) pre-application here by midnight on Sunday, March 4th. Completing the pre-application will highlight your application and prioritize its review. Your input will also help evolve our awards’ benefits.
+  </p>
+<% else %>
+  <p>
+    At the Straubel Foundation, we aim to empower leaders and maximize the impact of their work. If you are an emerging leader dedicated to making an impact in your community, please fill out our brief (10-minute) pre-application here by midnight on Sunday, March 4th. Completing the pre-application will highlight your application and prioritize its review. Your input will also help evolve our awards’ benefits.
+  </p>
+<% end %>
+
 <%= form_with(model: response, local: true) do |form| %>
   <% if response.errors.any? %>
     <div id="error_explanation">

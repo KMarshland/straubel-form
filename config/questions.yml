@@ -32,7 +32,7 @@ q3: Tell us about a time when you wanted something to happen and you had to mobi
 
 q4:
   title: What inspired you to apply? (optional)
+  description: Tell us about why you are applying, what inspires you, or any other information you want us to know. (300 characters max)
   campaigns:
     - impact
-    - impact1
-    - impact2
+    - sustainableimpact
