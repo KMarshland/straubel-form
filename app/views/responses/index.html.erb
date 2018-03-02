@@ -2,29 +2,61 @@
 
 <h1>Responses</h1>
 
+<h2>
+  <%= @responses.count %> responses total / <%= @page_views %> page views
+</h2>
+
 <table>
   <thead>
-    <tr>
-      <th>Session</th>
-      <th>View</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Date</th>
-      <th colspan="2"></th>
-    </tr>
+  <tr>
+    <th>Campaign</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Date</th>
+    <th colspan="2"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @responses.each do |response| %>
-      <tr>
-        <td><%= response.session %></td>
-        <td><%= response.view %></td>
-        <td><%= response.name %></td>
-        <td><%= response.email %></td>
-        <td><%= response.created_at.to_formatted_s(:short) %></td>
-        <td><%= link_to 'Show', response %></td>
-        <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @responses.each do |response| %>
+    <tr>
+      <td><%= response.campaign %></td>
+      <td><%= response.name %></td>
+      <td><%= response.email %></td>
+      <td><%= response.created_at.to_formatted_s(:short) %></td>
+      <td><%= link_to 'Show', response %></td>
+      <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>
+  By campaign
+</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Campaign</th>
+    <th>Count</th>
+    <th>First time fills</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @by_campaign.each do |campaign, details| %>
+    <tr>
+      <td>
+        <%= campaign %>
+      </td>
+      <td>
+        <%= details[:count] %>
+      </td>
+      <td>
+        <%= details[:first_time] %>
+      </td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
