@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def requires_admin
-    redirect_to(root_path) unless current_user && current_user.admin
+    redirect_to('/users/sign_in') unless current_user && current_user.admin
   end
 
 end
