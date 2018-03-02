@@ -7,7 +7,7 @@ class ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
-    sesssion[:session_uuid] = nil
+    session[:session_uuid] = nil
     @responses = Response.order('created_at')
     @page_views = Event.where(kind: 'pageLoad').count
 
@@ -19,8 +19,12 @@ class ResponsesController < ApplicationController
       } if @by_campaign[response.campaign].nil?
 
       @by_campaign[response.campaign][:count] += 1
-      @by_campaign[response.campaign][:first_time] += 1 if Event.where(kind: 'pageLoad', session: response.session).count == Event.where(kind: 'pageLoad', view: response.view).count
     end
+
+    @by_campaign.keys.each do |campaign|
+      @by_campaign[campaign][:page_views] = Event.where(kind: 'pageLoad', campaign: campaign).count
+    end
+
   end
 
   # GET /responses/1
