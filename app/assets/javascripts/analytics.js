@@ -12,6 +12,7 @@ function createEvent(event) {
     event.time = event.time || new Date();
     event.session = document.getElementById('session_id').content;
     event.view = document.getElementById('view_id').content;
+    event.campaign = document.getElementById('campaign_id').content;
 
     console.log('Sending event', event);
 

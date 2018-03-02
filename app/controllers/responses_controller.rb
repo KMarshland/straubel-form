@@ -7,6 +7,7 @@ class ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
+    sesssion[:session_uuid] = nil
     @responses = Response.order('created_at')
     @page_views = Event.where(kind: 'pageLoad').count
 
