@@ -25,6 +25,11 @@ class ResponsesController < ApplicationController
       @by_campaign[campaign][:page_views] = Event.where(kind: 'pageLoad', campaign: campaign).count
     end
 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @responses.to_csv }
+    end
+
   end
 
   # GET /responses/1

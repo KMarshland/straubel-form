@@ -36,4 +36,21 @@ class Response < ApplicationRecord
     )
   end
 
+  def self.to_csv
+    csv = ['id', 'email', 'name', 'campaign', 'created_at', *QUESTIONS.map{|_key, q| q[:title].gsub(',', '')}].join(',') + "\n"
+
+    all.each do |response|
+      csv += [
+          response.id,
+          response.email,
+          response.name,
+          response.campaign,
+          response.created_at,
+          *QUESTIONS.map{|key, _q| response.answers[key]}
+      ].join(',') + "\n"
+    end
+
+    csv
+  end
+
 end
